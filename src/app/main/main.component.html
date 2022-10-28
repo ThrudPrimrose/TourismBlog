@@ -1,0 +1,23 @@
+<c-header>
+    <c-container fluid>
+        <c-header-brand [routerLink]>Georgi Travel</c-header-brand>
+        <c-header-nav class="ms-auto">
+            <c-nav-item>
+                <c-icon name="cilHome" size="xl" [routerLink]></c-icon>
+            </c-nav-item>
+        </c-header-nav>
+        <c-dropdown variant="btn-group">
+            <button cButton cDropdownToggle color="secondary" variant="ghost">
+                {{currentLanguage}}
+            </button>
+            <ul cDropdownMenu>
+                <li><button cDropdownItem (click)="setLanguage('EN')">EN</button></li>
+                <li><button cDropdownItem (click)="setLanguage('RU')">RU</button></li>
+                <li><button cDropdownItem (click)="setLanguage('TR')">TR</button></li>
+            </ul>
+        </c-dropdown>
+    </c-container>
+
+</c-header>
+
+<router-outlet></router-outlet>
