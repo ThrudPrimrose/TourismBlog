@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { IconSetService } from '@coreui/icons-angular';
+import { cilHome } from '@coreui/icons';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tourism-blog';
+
+  constructor(public iconSet: IconSetService) {
+    iconSet.icons = {
+      cilHome
+    };
+  }
 }

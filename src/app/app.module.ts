@@ -1,16 +1,63 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MainComponent } from './main/main.component';
+import { GreetComponent } from './views/greet/greet.component';
+import { AboutComponent } from './views/about/about.component';
+import { NewsComponent } from './views/news/news.component';
+import { SummaryComponent } from './views/summary/summary.component';
+import { TripsComponent } from './views/trips/trips.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HeaderModule } from '@coreui/angular';
+import { DropdownModule } from '@coreui/angular';
+import { GridModule } from '@coreui/angular';
+import { NavModule } from '@coreui/angular';
+import { IconModule } from '@coreui/icons-angular';
+import { NavbarModule } from '@coreui/angular';
+import { CollapseModule } from '@coreui/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from '@coreui/angular';
+import { ButtonGroupModule } from '@coreui/angular';
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainComponent,
+    GreetComponent,
+    AboutComponent,
+    NewsComponent,
+    SummaryComponent,
+    TripsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'en',
+    }),
+    HttpClientModule,
+    HeaderModule, 
+    DropdownModule,
+    GridModule,
+    NavModule, 
+    IconModule,
+    NavbarModule,
+    CollapseModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    ButtonGroupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
