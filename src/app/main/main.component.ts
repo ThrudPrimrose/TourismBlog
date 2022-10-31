@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslatorService } from '../services/translator.service';
 
 @Component({
@@ -9,16 +10,20 @@ import { TranslatorService } from '../services/translator.service';
 export class MainComponent implements OnInit {
   currentLanguage: string = "EN";
 
-  constructor(private translator: TranslatorService) { }
+  constructor(private translator: TranslatorService, public router: Router) { }
 
   ngOnInit(): void {
   }
 
-  setLanguage(language: string, ){
+  setLanguage(language: string){
     this.currentLanguage = language;
     this.translator.setLanguage(this.currentLanguage);
   }
 
+  returnToRoot() {
+    this.router.navigateByUrl("");
+  }
 
+  
 
 }

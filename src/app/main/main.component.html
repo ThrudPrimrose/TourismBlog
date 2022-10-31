@@ -1,10 +1,12 @@
 <c-header>
     <c-container fluid>
-        <c-header-brand [routerLink]>Georgi Travel</c-header-brand>
+        <c-header-brand [routerLink]="'/'">Georgi Travel</c-header-brand>
         <c-header-nav class="ms-auto">
-            <c-nav-item>
-                <c-icon name="cilHome" size="xl" [routerLink]></c-icon>
-            </c-nav-item>
+            <a [routerLink]="'/'" class="no-color">
+                <c-nav-item >
+                    <c-icon name="cilHome" size="xl"></c-icon>
+                </c-nav-item>
+            </a>
         </c-header-nav>
         <c-dropdown variant="btn-group">
             <button cButton cDropdownToggle color="secondary" variant="ghost">
