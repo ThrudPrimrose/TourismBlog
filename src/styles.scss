@@ -1,2 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@coreui/coreui/scss/coreui';
+
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.load-animation {
+    animation: fadeIn 0.84s, moveUp 0.42s; 
+    animation-timing-function: ease-out;
+}
+
+.fade-in { 
+    animation: fadeIn 0.42s; 
+    animation-timing-function: ease-out;
+}
+
+@keyframes fadeIn {
+    0% { 
+        opacity: 0.15; 
+    }
+    100% { 
+        opacity: 1.00; 
+    }
+}
+
+.move-up {
+    animation: moveUp 0.42s;
+    animation-timing-function: ease-out;
+}
+
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(9%);
+    }
+    100% {
+        position: translateY(0%);
+    }
+}

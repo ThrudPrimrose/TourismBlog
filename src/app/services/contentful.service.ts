@@ -26,4 +26,8 @@ export class ContentfulService {
   getHeaderImages(query?: object): Promise<Entry<any>[]> {
     return this.getAllEntriesOfType("headerImages", query);
   }
+
+  getSummary(query?: object): Promise<Entry<any>[]> {
+    return this.getAllEntriesOfType("summary", query);
+  }
 }
