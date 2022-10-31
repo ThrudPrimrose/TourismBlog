@@ -1,1 +1,21 @@
-<p>about works!</p>
+<c-row class="justify-content-center load-animation">
+  <c-col [xs]="9">
+    <c-card class="center-card"> 
+      <c-card-body>
+        <h5 cCardTitle>
+          {{name}} {{surname}}
+        </h5>
+        <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+          {{ "personal_subtitle" | translate }}
+        </h6>
+        <div class="clearfix">
+          <img cCol xs="6" class="right mb-3 ms-md-3" src="{{photo_url}}"/>
+          <p cCardText>
+            {{autobiography}}
+          </p>
+        </div>
+      </c-card-body>
+  </c-card>
+  </c-col>
+</c-row>
+

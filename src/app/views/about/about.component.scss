@@ -1,0 +1,13 @@
+.center-card {
+	margin: 5% auto;
+	min-width: 50%;
+	max-width: 90%;
+	width: max-content;
+}
+
+.right {
+    float: right !important;
+    max-width: min(100%, 400px);
+    padding-right: 2%;
+    padding-bottom: 2%;
+}

@@ -21,6 +21,8 @@ import { CollapseModule } from '@coreui/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from '@coreui/angular';
 import { ButtonGroupModule } from '@coreui/angular';
+import { CarouselModule } from '@coreui/angular';
+import { CardModule } from '@coreui/angular';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -57,7 +59,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     CollapseModule,
     BrowserAnimationsModule,
     ButtonModule,
-    ButtonGroupModule
+    ButtonGroupModule,
+    CarouselModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
