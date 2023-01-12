@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuxService } from 'src/app/services/aux.service';
 import { ContentfulService } from 'src/app/services/contentful.service';
 import { TranslatorService } from 'src/app/services/translator.service';
 
@@ -9,7 +10,7 @@ import { TranslatorService } from 'src/app/services/translator.service';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private contentful: ContentfulService, private translate: TranslatorService) { }
+  constructor(private contentful: ContentfulService, private translate: TranslatorService, private aux: AuxService) { }
 
   name: string = "";
   surname: string = "";
@@ -20,9 +21,7 @@ export class AboutComponent implements OnInit {
   set_local_variables(data: any) {
     this.name = data["name"];
     this.surname = data["surname"];
-    this.autobiographies["EN"] = data["autobiography"];
-    this.autobiographies["RU"] = data["autobiographyRu"];
-    this.autobiographies["TR"] = data["autobiographyTr"];
+    this.autobiographies = this.aux.create_localized_dict(data, "autobiography");
     this.photo_url = data["photo"]["fields"]["file"]["url"];
     this.autobiography = this.autobiographies["EN"];
   }
