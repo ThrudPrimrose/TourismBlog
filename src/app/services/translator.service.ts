@@ -15,4 +15,18 @@ export class TranslatorService {
   setLanguage(language: string): void {
     this.translate.use(language.toLowerCase());
   }
+
+  translator(): TranslateService {
+    return this.translate;
+  }
+
+  getLangSuffix(lang: string): string {
+    if (lang.toUpperCase() == "RU") {
+      return "RU";
+    } else if (lang.toUpperCase() == "TR") {
+      return "TR";
+    } else {
+      return "EN";
+    }
+  }
 }

@@ -1,25 +1,42 @@
 <c-header>
-    <c-container fluid>
-        <c-header-brand [routerLink]="'/'">Georgi Travel</c-header-brand>
-        <c-header-nav class="ms-auto">
-            <a [routerLink]="'/'" class="no-color">
-                <c-nav-item >
-                    <c-icon name="cilHome" size="xl"></c-icon>
-                </c-nav-item>
-            </a>
-        </c-header-nav>
-        <c-dropdown variant="btn-group">
-            <button cButton cDropdownToggle color="secondary" variant="ghost">
-                {{currentLanguage}}
-            </button>
-            <ul cDropdownMenu>
-                <li><button cDropdownItem (click)="setLanguage('EN')">EN</button></li>
-                <li><button cDropdownItem (click)="setLanguage('RU')">RU</button></li>
-                <li><button cDropdownItem (click)="setLanguage('TR')">TR</button></li>
-            </ul>
-        </c-dropdown>
-    </c-container>
-
+    <c-header-brand class="toright" [routerLink]="'/'">Georgi Travel</c-header-brand>
+</c-header>
+<c-header>
+    <c-header-nav>
+        <a>
+            <c-nav-item>
+                <a [active]="true" routerLink="/" cNavLink>Home</a>
+            </c-nav-item>
+        </a>
+        <div class="vl"></div>
+        <a>
+            <c-nav-item>
+                <a [active]="true" routerLink="/about" cNavLink>About Me</a>
+            </c-nav-item>
+        </a>
+        <div class="vl"></div>
+        <a>
+            <c-nav-item>
+                <a [active]="true" routerLink="/news" cNavLink>News</a>
+            </c-nav-item>
+        </a>
+        <div class="vl"></div>
+        <a>
+            <c-nav-item>
+                <a [active]="true" routerLink="/trips" cNavLink>Itinaries</a>
+            </c-nav-item>
+        </a>
+    </c-header-nav>
+    <c-dropdown variant="btn-group">
+        <button cButton cDropdownToggle color="secondary" variant="ghost">
+            {{currentLanguage}}
+        </button>
+        <ul cDropdownMenu>
+            <li><button cDropdownItem (click)="setLanguage('EN')">EN</button></li>
+            <li><button cDropdownItem (click)="setLanguage('RU')">RU</button></li>
+            <li><button cDropdownItem (click)="setLanguage('TR')">TR</button></li>
+        </ul>
+    </c-dropdown>
 </c-header>
 
 <router-outlet></router-outlet>

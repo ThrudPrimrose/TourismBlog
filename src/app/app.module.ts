@@ -6,7 +6,6 @@ import { MainComponent } from './main/main.component';
 import { GreetComponent } from './views/greet/greet.component';
 import { AboutComponent } from './views/about/about.component';
 import { NewsComponent } from './views/news/news.component';
-import { SummaryComponent } from './views/summary/summary.component';
 import { TripsComponent } from './views/trips/trips.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -35,7 +34,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     GreetComponent,
     AboutComponent,
     NewsComponent,
-    SummaryComponent,
     TripsComponent,
   ],
   imports: [
@@ -50,10 +48,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
       defaultLanguage: 'en',
     }),
     HttpClientModule,
-    HeaderModule, 
+    HeaderModule,
     DropdownModule,
     GridModule,
-    NavModule, 
+    NavModule,
     IconModule,
     NavbarModule,
     CollapseModule,
