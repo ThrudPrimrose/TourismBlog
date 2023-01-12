@@ -4,6 +4,7 @@ import { MainComponent } from './main/main.component';
 import { GreetComponent } from './views/greet/greet.component';
 import { NewsComponent } from './views/news/news.component';
 import { AboutComponent } from './views/about/about.component';
+import { TripsComponent } from './views/trips/trips.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'greet' },
@@ -12,7 +13,8 @@ const routes: Routes = [
     children: [
       { path: 'greet', component: GreetComponent },
       { path: 'news', component: NewsComponent },
-      { path: 'about', component: AboutComponent }
+      { path: 'about', component: AboutComponent },
+      { path: 'trips', component: TripsComponent }
     ]
   },
   { path: '**', redirectTo: 'greet', pathMatch: 'full' },

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from 'src/app/services/contentful.service';
+import { TranslatorService } from 'src/app/services/translator.service';
 
 @Component({
   selector: 'app-greet',
@@ -8,16 +9,16 @@ import { ContentfulService } from 'src/app/services/contentful.service';
 })
 export class GreetComponent implements OnInit {
 
-  constructor(private contentful : ContentfulService) { }
+  constructor(private contentful: ContentfulService, private translate: TranslatorService) { }
 
-  images: string[] = new Array(); 
+  images: string[] = new Array();
   summary: any[] = new Array();
 
   ngOnInit(): void {
     this.contentful.getHeaderImages().then(items => {
       console.log(items);
-      for (const item of items){
-        for (const image of item["fields"]["images"]){
+      for (const item of items) {
+        for (const image of item["fields"]["images"]) {
           this.images.push(image["fields"]["file"]["url"]);
         }
       }
@@ -25,10 +26,10 @@ export class GreetComponent implements OnInit {
 
     this.contentful.getSummary().then(items => {
       // There should only one summary exist at a time
-      for (const summary_item of items[0]['fields']['summaryItems']){
-        this.summary.push(summary_item['fields']);}
+      for (const summary_item of items[0]['fields']['summaryItems']) {
+        this.summary.push(summary_item['fields']);
+      }
       console.log(this.summary);
     });
   }
-
 }
