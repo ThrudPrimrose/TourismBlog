@@ -22,6 +22,8 @@ import { ButtonModule } from '@coreui/angular';
 import { ButtonGroupModule } from '@coreui/angular';
 import { CarouselModule } from '@coreui/angular';
 import { CardModule } from '@coreui/angular';
+import { TripFormComponent } from './views/trip-form/trip-form.component';
+import { ContactComponent } from './views/contact/contact.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -35,6 +37,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AboutComponent,
     NewsComponent,
     TripsComponent,
+    TripFormComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

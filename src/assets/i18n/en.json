@@ -1,4 +1,18 @@
 {
     "greeting": "This is in English",
-    "personal_subtitle": "Your Man in Georgia"
+    "personal_subtitle": "Your Man in Georgia",
+    "itinary-request": "Do you want a personalized trip?",
+    "home": "Home",
+    "about-me": "About Me",
+    "news": "News",
+    "itinaries": "Itinaries",
+    "full-name": "Name and Surname",
+    "email": "E-mail",
+    "email-placeholder": "your.email@mail.com",
+    "message": "Message",
+    "itinary-msg-placeholder": "Your message.",
+    "submit": "Submit",
+    "name-placeholder": "Your name",
+    "contact-us": "Contact Us Here",
+    "contact": "Contact"
 }

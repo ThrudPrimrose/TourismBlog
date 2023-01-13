@@ -30,4 +30,8 @@ export class ContentfulService {
   getSummary(query?: object): Promise<Entry<any>[]> {
     return this.getAllEntriesOfType("summary", query);
   }
+
+  getTrip(query?: object): Promise<Entry<any>[]> {
+    return this.getAllEntriesOfType("trip", query);
+  }
 }

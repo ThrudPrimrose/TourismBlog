@@ -1,4 +1,18 @@
 {
     "greeting": "Bu Türkçedir.",
-    "personal_subtitle": "Gürcistan'daki Rehberiniz"
+    "personal_subtitle": "Gürcistan'daki Rehberiniz",
+    "itinary-request": "Kişiselleştirilmiş bir gezi mi istiyorsunuz?",
+    "home": "Anasayfa",
+    "about-me": "Hakkımda",
+    "news": "Haberler",
+    "itinaries": "Güzergahlar",
+    "full-name": "Ad ve Soyad",
+    "email": "Email",
+    "email-placeholder": "email.adresiniz@mail.com",
+    "message": "Mesaj",
+    "itinary-msg-placeholder": "Mesajınız.",
+    "submit": "Gönder",
+    "name-placeholder": "Ad ve Soyadınız",
+    "contact-us": "Bizimle burada iletişime geçin",
+    "contact": "İletişim"
 }
