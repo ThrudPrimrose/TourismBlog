@@ -1,7 +1,7 @@
 {
     "greeting": "Это на Русском.",
     "personal_subtitle": "Ваш гид в Грузии",
-    "itinary-request": "Хотите индивидуальное путешествие?",
+    "itinary-request": "Вы хотите обсудить следующие шаги?",
     "home": "Главная",
     "about-me": "О Себе",
     "news": "Новости",
@@ -13,7 +13,7 @@
     "itinary-msg-placeholder": "Ваше сообщение.",
     "submit": "Отправить",
     "name-placeholder": "Ваше имя и фамилия",
-    "contact-us": "Свяжитесь с нами здесь",
+    "contact-us": "Свяжитесь с мной здесь",
     "contact": "Контакты",
-    "whatsapp-contact": "Или свяжитесь с нами через WhatsApp"
+    "whatsapp-contact": "Или свяжитесь с мной через WhatsApp"
 }
