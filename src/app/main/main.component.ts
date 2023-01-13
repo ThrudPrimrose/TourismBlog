@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Positions } from '@coreui/angular';
 import { TranslatorService } from '../services/translator.service';
 
 @Component({
@@ -9,13 +10,28 @@ import { TranslatorService } from '../services/translator.service';
 })
 export class MainComponent implements OnInit {
   currentLanguage: string = "EN";
+  position_option: string = "sticky";
 
   constructor(private translator: TranslatorService, public router: Router) { }
 
   ngOnInit(): void {
+    if (this.router.url === "/trips") {
+      this.position_option = "fixed";
+    } else {
+      this.position_option = "sticky";
+    }
+
+    this.router.events.subscribe(val => {
+      console.log(this.router.url);
+      if (this.router.url === "/trips") {
+        this.position_option = "fixed";
+      } else {
+        this.position_option = "sticky";
+      }
+    });
   }
 
-  setLanguage(language: string){
+  setLanguage(language: string) {
     this.currentLanguage = language;
     this.translator.setLanguage(this.currentLanguage);
   }
@@ -24,6 +40,6 @@ export class MainComponent implements OnInit {
     this.router.navigateByUrl("");
   }
 
-  
+
 
 }

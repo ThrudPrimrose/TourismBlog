@@ -2,31 +2,39 @@
 @import '~@coreui/coreui/scss/coreui';
 
 
-html, body { height: 100%; }
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .load-animation {
-    animation: fadeIn 0.84s, moveUp 0.42s; 
+    animation: fadeIn 0.72s, moveUp 0.38s;
     animation-timing-function: ease-out;
 }
 
-.fade-in { 
-    animation: fadeIn 0.42s; 
+.fade-in {
+    animation: fadeIn 0.38s;
     animation-timing-function: ease-out;
 }
 
 @keyframes fadeIn {
-    0% { 
-        opacity: 0.15; 
+    0% {
+        opacity: 0.12;
     }
-    100% { 
-        opacity: 1.00; 
+
+    100% {
+        opacity: 1.00;
     }
 }
 
 .move-up {
-    animation: moveUp 0.42s;
+    animation: moveUp 0.38s;
     animation-timing-function: ease-out;
 }
 
@@ -35,6 +43,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     0% {
         transform: translateY(9%);
     }
+
     100% {
         position: translateY(0%);
     }
