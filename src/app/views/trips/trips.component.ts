@@ -86,7 +86,7 @@ export class TripsComponent implements OnInit {
     }
   }
 
-  goToTripForm() {
-    this.router.navigate(['trip-form']);
+  goToContact() {
+    this.router.navigate(['contact']);
   }
 }

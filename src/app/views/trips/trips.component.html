@@ -1,67 +1,70 @@
-<c-row *ngFor="let trip_item of trips; let i = index" class="md-3 p-2">
-    <c-card class="hoverable-sub-card shadow" (click)="visible[i] = !visible[i]">
-        <c-card-body>
-            <c-row>
-                <c-col xs="8">
-                    <h5 cCardTitle> {{ trip_item.title[getLangSuffixCapital()] }} </h5>
-                    <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
-                        {{ trip_item.duration }} Days
-                    </h6>
-                    <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
-                        {{ trip_item.price }} USD
-                    </h6>
+<c-container>
+    <c-row *ngFor="let trip_item of trips; let i = index" class="md-3 p-2 load-animation">
+        <c-card class="hoverable-sub-card shadow" (click)="visible[i] = !visible[i]">
+            <c-card-body>
+                <c-row>
+                    <c-col xs="8">
+                        <h5 cCardTitle> {{ trip_item.title[getLangSuffixCapital()] }} </h5>
+                        <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+                            {{ trip_item.duration }} Days
+                        </h6>
+                        <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+                            {{ trip_item.price }} USD
+                        </h6>
 
-                    <p cCardText>
-                        {{ trip_item.summary[getLangSuffixCapital()] }}
-                    </p>
-                </c-col>
-                <c-col xs="4">
-                    <img *ngIf="trip_item.photo_url != 'NONE'" class="card-img-sm-right fixed-height"
-                        src="{{ trip_item.photo_url }}" />
-                </c-col>
-            </c-row>
-        </c-card-body>
-        <c-card-body [visible]="visible[i]" cCollapse>
-            <hr class="solid percent100">
-            <c-row *ngFor="let day_item of trip_item.day_items; let j = index">
-                <c-card-body *ngIf="day_item.fields['dayImage']">
-                    <c-row>
-                        <c-col xs="4">
-                            <img class="card-img-sm-right fixed-height"
-                                src='{{ day_item.fields["dayImage"]["fields"]["file"]["url"] }}' />
-                        </c-col>
-                        <c-col xs="8">
-                            <h5 cCardTitle> {{ day_item.fields["dayTitle" + getLangSuffix()] }} </h5>
-                            <p cCardText>
-                                {{ day_item.fields["dayPlan" + getLangSuffix()] }}
-                            </p>
-                        </c-col>
-                    </c-row>
-                </c-card-body>
-                <c-card-body *ngIf="!day_item.fields['dayImage']">
-                    <c-row>
-                        <c-col xs="12">
-                            <h5 cCardTitle> {{ day_item.fields["dayTitle" + getLangSuffix()] }} </h5>
-                            <p cCardText>
-                                {{ day_item.fields["dayPlan" + getLangSuffix()] }}
-                            </p>
-                        </c-col>
-                    </c-row>
-                </c-card-body>
-                <hr class="solid percent90" *ngIf="j != trip_item.day_items.length - 1">
-            </c-row>
-        </c-card-body>
-    </c-card>
-</c-row>
-
-<c-row class="md-3 p-2">
-    <hr class="solid percent90">
-</c-row>
-
-<c-row class="md-3 p-2">
-    <c-row class="center percent90">
-        <button cButton color="dark" variant="outline" (click)="goToTripForm()">
-            {{ "itinary-request" | translate }}
-        </button>
+                        <p cCardText>
+                            {{ trip_item.summary[getLangSuffixCapital()] }}
+                        </p>
+                    </c-col>
+                    <c-col xs="4">
+                        <img *ngIf="trip_item.photo_url != 'NONE'" class="card-img-sm-right fixed-height"
+                            src="{{ trip_item.photo_url }}" />
+                    </c-col>
+                </c-row>
+            </c-card-body>
+            <c-card-body [visible]="visible[i]" cCollapse>
+                <hr class="solid percent100">
+                <c-row *ngFor="let day_item of trip_item.day_items; let j = index">
+                    <c-card-body *ngIf="day_item.fields['dayImage']">
+                        <c-row>
+                            <c-col xs="4">
+                                <img class="card-img-sm-right fixed-height"
+                                    src='{{ day_item.fields["dayImage"]["fields"]["file"]["url"] }}' />
+                            </c-col>
+                            <c-col xs="8">
+                                <h5 cCardTitle> {{ day_item.fields["dayTitle" + getLangSuffix()] }} </h5>
+                                <p cCardText>
+                                    {{ day_item.fields["dayPlan" + getLangSuffix()] }}
+                                </p>
+                            </c-col>
+                        </c-row>
+                    </c-card-body>
+                    <c-card-body *ngIf="!day_item.fields['dayImage']">
+                        <c-row>
+                            <c-col xs="12">
+                                <h5 cCardTitle> {{ day_item.fields["dayTitle" + getLangSuffix()] }} </h5>
+                                <p cCardText>
+                                    {{ day_item.fields["dayPlan" + getLangSuffix()] }}
+                                </p>
+                            </c-col>
+                        </c-row>
+                    </c-card-body>
+                    <hr class="solid percent90" *ngIf="j != trip_item.day_items.length - 1">
+                </c-row>
+            </c-card-body>
+        </c-card>
     </c-row>
-</c-row>
+
+    <c-row class="md-3 p-2 load-animation">
+        <hr class="solid percent90">
+    </c-row>
+
+    <c-row class="md-3 p-2 load-animation">
+        <c-row class="center percent90">
+            <button cButton color="dark" variant="outline" (click)="goToContact()">
+                {{ "itinary-request" | translate }}
+            </button>
+        </c-row>
+        <div class="pad"> </div>
+    </c-row>
+</c-container>
