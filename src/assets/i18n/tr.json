@@ -1,7 +1,7 @@
 {
     "greeting": "Bu Türkçedir.",
     "personal_subtitle": "Gürcistan'daki Rehberiniz",
-    "itinary-request": "Kişiselleştirilmiş bir gezi mi istiyorsunuz?",
+    "itinary-request": "Sonraki adımları mı planlamak istiyorsunuz??",
     "home": "Anasayfa",
     "about-me": "Hakkımda",
     "news": "Haberler",
@@ -13,7 +13,7 @@
     "itinary-msg-placeholder": "Mesajınız.",
     "submit": "Gönder",
     "name-placeholder": "Ad ve Soyadınız",
-    "contact-us": "Bizimle burada iletişime geçin",
+    "contact-us": "Benimle buradan iletişime geçin",
     "contact": "İletişim",
     "whatsapp-contact": "Veya WhatsApp aracılığıyla iletişim geçin"
 }
