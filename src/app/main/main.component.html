@@ -5,25 +5,31 @@
     <c-header-nav>
         <a>
             <c-nav-item>
-                <a [active]="true" routerLink="/" cNavLink>Home</a>
+                <a [active]="true" routerLink="/" cNavLink> {{ "home" | translate }} </a>
             </c-nav-item>
         </a>
         <div class="vl"></div>
         <a>
             <c-nav-item>
-                <a [active]="true" routerLink="/about" cNavLink>About Me</a>
+                <a [active]="true" routerLink="/about" cNavLink> {{ "about-me" | translate }} </a>
             </c-nav-item>
         </a>
         <div class="vl"></div>
         <a>
             <c-nav-item>
-                <a [active]="true" routerLink="/news" cNavLink>News</a>
+                <a [active]="true" routerLink="/news" cNavLink> {{ "news" | translate }} </a>
             </c-nav-item>
         </a>
         <div class="vl"></div>
         <a>
             <c-nav-item>
-                <a [active]="true" routerLink="/trips" cNavLink>Itinaries</a>
+                <a [active]="true" routerLink="/trips" cNavLink> {{ "itinaries" | translate }} </a>
+            </c-nav-item>
+        </a>
+        <div class="vl"></div>
+        <a>
+            <c-nav-item>
+                <a [active]="true" routerLink="/contact" cNavLink> {{ "contact" | translate }} </a>
             </c-nav-item>
         </a>
     </c-header-nav>

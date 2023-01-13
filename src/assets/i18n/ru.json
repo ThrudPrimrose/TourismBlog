@@ -1,4 +1,18 @@
 {
     "greeting": "Это на Русском.",
-    "personal_subtitle": "Ваш гид в Грузии"
+    "personal_subtitle": "Ваш гид в Грузии",
+    "itinary-request": "Хотите индивидуальное путешествие?",
+    "home": "Главная",
+    "about-me": "О Себе",
+    "news": "Новости",
+    "itinaries": "Маршруты",
+    "full-name": "Имя и Фамилия",
+    "email": "E-мейл",
+    "email-placeholder": "your.email@gmail.com",
+    "message": "Сообщение",
+    "itinary-msg-placeholder": "Ваше сообщение.",
+    "submit": "Отправить",
+    "name-placeholder": "Ваше имя и фамилия",
+    "contact-us": "Свяжитесь с нами здесь",
+    "contact": "Контакты"
 }
