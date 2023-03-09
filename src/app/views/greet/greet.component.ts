@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { ContentfulService } from 'src/app/services/contentful.service';
 import { TranslatorService } from 'src/app/services/translator.service';
 
@@ -9,7 +9,7 @@ import { TranslatorService } from 'src/app/services/translator.service';
 })
 export class GreetComponent implements OnInit {
 
-  constructor(private contentful: ContentfulService, private translate: TranslatorService) { }
+  constructor(private elementRef: ElementRef, private contentful: ContentfulService, private translate: TranslatorService) { }
 
   images: string[] = new Array();
   summary: any[] = new Array();
@@ -31,5 +31,16 @@ export class GreetComponent implements OnInit {
       }
       console.log(this.summary);
     });
+
+    this.innerWidth = window.innerWidth;
+  }
+
+  public innerWidth: number = 0;
+  public class_height: string = "470px";
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(_event: any) {
+    this.innerWidth = window.innerWidth;
   }
 }

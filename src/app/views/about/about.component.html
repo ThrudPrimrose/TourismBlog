@@ -1,6 +1,6 @@
 <c-row *ngIf="name != null && name != ''" class="justify-content-center load-animation">
-  <c-col [xs]="9">
-    <c-card class="center-card"> 
+  <c-col xs="11" md="9" lg="7" xl="6">
+    <c-card class="center-card">
       <c-card-body>
         <h5 cCardTitle>
           {{name}} {{surname}}
@@ -9,13 +9,12 @@
           {{ "personal_subtitle" | translate }}
         </h6>
         <div class="clearfix">
-          <img cCol xs="6" class="right mb-3 ms-md-3" src="{{photo_url}}"/>
+          <img cCol xs="12" md="9" lg="6" xl="6" class="right mb-3 ms-md-3" src="{{photo_url}}" />
           <p cCardText>
             {{autobiography}}
           </p>
         </div>
       </c-card-body>
-  </c-card>
+    </c-card>
   </c-col>
 </c-row>
-
