@@ -2,7 +2,7 @@
   <c-carousel-indicators></c-carousel-indicators>
   <c-carousel-inner>
     <c-carousel-item *ngFor="let slide of images">
-      <img [src]="slide" class="header-image" loading="lazy" />
+      <img [src]="slide" class="header-image" [style.height.px]="innerWidth > 600? '470': '235'" />
     </c-carousel-item>
   </c-carousel-inner>
   <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
