@@ -6,17 +6,25 @@ import { createClient, Entry } from 'contentful';
   providedIn: 'root'
 })
 export class ContentfulService {
-  private cdaClient = createClient({
-    space: environment.contentfulConfig.space ?? "",
-    accessToken: environment.contentfulConfig.accessToken ?? ""
-  });
+  private cdaClient: any = null;
 
-  constructor() { }
+  constructor() {
+    console.log(process.env)
+
+    let s1:string = process.env["NG_APP_SPACE"] ?? ""
+    let s2:string = process.env['NG_APP_ACCESS_TOKEN'] ?? ""
+
+    this.cdaClient = createClient({
+      space: s1,
+      accessToken: s2
+    });
+
+  }
 
   private getAllEntriesOfType(entry_id: string, query?: object,): Promise<Entry<any>[]> {
     return this.cdaClient.getEntries(Object.assign({
       content_type: entry_id
-    }, query)).then(res => res.items);
+    }, query)).then((res: { items: any; }) => res.items);
   }
 
   getAutobiography(query?: object): Promise<Entry<any>[]> {
