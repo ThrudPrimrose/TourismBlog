@@ -7,8 +7,8 @@ import { createClient, Entry } from 'contentful';
 })
 export class ContentfulService {
   private cdaClient = createClient({
-    space: environment.contentfulConfig.space,
-    accessToken: environment.contentfulConfig.accessToken
+    space: environment.contentfulConfig.space ?? "",
+    accessToken: environment.contentfulConfig.accessToken ?? ""
   });
 
   constructor() { }
