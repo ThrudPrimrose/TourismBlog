@@ -4,14 +4,13 @@
 
 
 const _contentfulConfig = {
-  space: 'iuul3pb05b1r',
-  environment: 'master', // defaults to 'master' if not set
-  accessToken: '18SHPu2TxGe7osUbFecxtuoFZhaEzIRMIhM-8P2CCos'
+  space: process.env["SPACE"],
+  environment: process.env["ENVIRONMENT"],
+  accessToken: process.env["ACCESS_TOKEN"]
 }
 
 export const environment = {
   production: false,
-  APIEndpoint: 'http://127.0.0.1:5000/',
   contentfulConfig: _contentfulConfig,
 };
 
