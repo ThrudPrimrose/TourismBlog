@@ -1,21 +1,23 @@
 .limit-height {
-    max-height: 95%;
-    width: 95%;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    padding-top: 5%;
-    padding-bottom: 5%;
+  max-height: min(90%, 600px);
+  max-width: 99%;
+  position: relative;
+  margin: 0px auto;
+  object-fit: cover;
 }
 
 .right {
     //padding-right: 5%;
-    padding-left: 5%;
+    //padding-left: 0%;
+    padding-right: 5%;
+    padding-top: 5%;
 }
 
 .left {
-    padding-left: 5%;
+    //padding-left: 5%;
     //padding-right: 1%;
+    padding-left: 5%;
+    padding-top: 5%;
 }
 
 .header-image {
@@ -25,4 +27,23 @@
     object-fit: cover;
     object-position: center;
     height: 470px;
+}
+
+.imageClass{
+  max-width: fit-content;
+  max-height: 600px;
+  justify-content: center;
+  text-align: center;
+}
+
+.textClass{
+  max-height: 100%;
+}
+
+.shiftToLeft{
+  left: -5%;
+}
+
+.shiftToRight {
+  margin-left: 50px;
 }

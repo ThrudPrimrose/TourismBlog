@@ -1,18 +1,62 @@
-<c-row *ngIf="name != null && name != ''" class="justify-content-center load-animation">
+<c-row *ngIf="murat_name != null && murat_name != ''" class="justify-content-center load-animation">
   <c-col xs="11" md="9" lg="7" xl="6">
     <c-card class="center-card">
       <c-card-body>
         <h5 cCardTitle>
-          {{name}} {{surname}}
+          {{murat_name}} {{murat_surname}}
         </h5>
         <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
-          {{ "personal_subtitle" | translate }}
+          {{ "murat_personal_subtitle" | translate }}
         </h6>
-        <div class="clearfix">
-          <img cCol xs="12" md="9" lg="6" xl="6" class="right mb-3 ms-md-3" src="{{photo_url}}" />
-          <p cCardText>
-            {{autobiography}}
-          </p>
+        <div class="row">
+          <div class="col-xs-12 col-s-12 col-md-9 col-lg-6 col-xl-6">
+            <img class="left" src="{{murat_photo_url}}" />
+          </div>
+          <div class="col-xs-0 col-s-0 col-md-3 col-lg-6 col-xl-6">
+              <c-row>
+                <p cCardText>
+                  {{murat_autobiography}}
+                </p>
+              </c-row>
+              <c-row class="justify-content-left mt-3 mr-xs-3">
+                <c-col xs="2" class="ml-3 mr-3 p-3">
+                  <a href="https://www.instagram.com/budanazi"><img height="32px" src="assets/instagram.svg"></a>
+                </c-col>
+                <c-col xs="2" class="ml-3 mr-3 p-3">
+                  <a href="https://www.linkedin.com/in/murat-budanazi-9b319a15a"><img height="32px" src="assets/linkedin.svg"></a>
+                </c-col>
+                <c-col xs="2" class="ml-3 mr-3 p-3">
+                  <a href="https://wa.me/491631402279"><img height="32px" src="assets/whatsapp.svg"></a>
+                </c-col>
+              </c-row>
+          </div>
+        </div>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
+
+<c-row *ngIf="nino_name != null && nino_name != ''" class="justify-content-center load-animation">
+  <c-col xs="11" md="9" lg="7" xl="6">
+    <c-card class="center-card">
+      <c-card-body>
+        <h5 cCardTitle>
+          {{nino_name}} {{nino_surname}}
+        </h5>
+        <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+          {{ "nino_personal_subtitle" | translate }}
+        </h6>
+        <div class="row">
+          <div class="col-xs-12 col-s-12 col-md-9 col-lg-6 col-xl-6">
+            <img class="left" src="{{nino_photo_url}}" />
+          </div>
+          <div class="col-xs-0 col-s-0 col-md-3 col-lg-6 col-xl-6">
+              <c-row>
+                <p cCardText>
+                  {{nino_autobiography}}
+                </p>
+              </c-row>
+          </div>
         </div>
       </c-card-body>
     </c-card>

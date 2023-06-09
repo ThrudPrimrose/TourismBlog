@@ -21,9 +21,9 @@ export class TranslatorService {
   }
 
   getLangSuffix(lang: string): string {
-    if (lang.toUpperCase() == "RU") {
+    if (lang.toUpperCase() === "RU") {
       return "RU";
-    } else if (lang.toUpperCase() == "TR") {
+    } else if (lang.toUpperCase() === "TR") {
       return "TR";
     } else {
       return "EN";

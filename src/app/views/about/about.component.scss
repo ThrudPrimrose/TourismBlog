@@ -5,9 +5,16 @@
 	width: max-content;
 }
 
-.right {
-    float: right !important;
+.left {
+    float: left !important;
     max-width: min(100%, 400px);
-    padding-right: 2%;
+    padding-left: 2%;
     padding-bottom: 2%;
+}
+
+.leftfull {
+  float: left !important;
+  max-width: min(100%);
+  padding-left: 2%;
+  padding-bottom: 2%;
 }

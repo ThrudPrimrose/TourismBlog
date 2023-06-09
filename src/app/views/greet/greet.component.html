@@ -13,21 +13,24 @@
   <c-row *ngFor="let summary_item of summary; let i = index" [attr.data-index]="i">
     <c-card class="load-animation">
       <c-row>
-        <c-col [lg]="5" *ngIf="(i%2) == 0 && getImage(i) != ''" class="rel md-3">
+        <c-col [xl]=4 *ngIf="(i%2) == 1 && getImage(i) != ''" class="imageClass">
           <img class="limit-height left" [src]="getImage(i)">
         </c-col>
-        <c-col [lg]="getImage(i) != ''? 7: 12">
-          <c-card-body>
+        <c-col [xl]=8 class="textClass">
+          <c-card-body *ngIf="(i%2) == 1">
+            <div class="me-3 ms-3 ">
+              <h1 cCardTitle>{{summary_item[getName('title')]}}</h1> <br>
+              <div [innerHTML]="summary_item[getBodyName()]"></div>
+            </div>
+          </c-card-body>
+          <c-card-body *ngIf="(i%2) == 0">
             <div class="me-3 ms-3">
-              <h5 cCardTitle>{{summary_item['title']}}</h5>
-              <p cCardText>
-                {{i}}
-                {{summary_item['body']}}
-              </p>
+              <h1 cCardTitle>{{summary_item[getName('title')]}}</h1> <br>
+              <div [innerHTML]="summary_item[getBodyName()]"></div>
             </div>
           </c-card-body>
         </c-col>
-        <c-col [lg]="5" *ngIf="(i%2) == 1  && getImage(i) != ''" class="rel">
+        <c-col [xl]=4 *ngIf="(i%2) == 0  && getImage(i) != ''" class="imageClass">
           <img class="limit-height right" [src]="getImage(i)">
         </c-col>
       </c-row>

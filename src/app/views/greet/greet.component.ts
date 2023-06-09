@@ -1,7 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { ContentfulService } from 'src/app/services/contentful.service';
 import { TranslatorService } from 'src/app/services/translator.service';
-
 @Component({
   selector: 'app-greet',
   templateUrl: './greet.component.html',
@@ -13,12 +12,12 @@ export class GreetComponent implements OnInit {
 
   images: string[] = [];
   summary: any[] = [];
+  body_identifier: string = "body";
 
   ngOnInit(): void {
     this.contentful.getHeaderImages().then(items => {
       for (const item of items) {
         for (const image of item["fields"]["images"]) {
-          console.log()
           this.images.push(image["fields"]["file"]["url"]);
         }
       }
@@ -29,9 +28,11 @@ export class GreetComponent implements OnInit {
       for (const summary_item of items[0]['fields']['summaryItems']) {
         this.summary.push(summary_item['fields']);
       }
+      console.log(items);
     });
 
     this.innerWidth = window.innerWidth;
+
   }
 
   public innerWidth: number = 0;
@@ -44,9 +45,30 @@ export class GreetComponent implements OnInit {
   }
 
   getImage(i: number){
+    if (!this.summary[i]){
+      return ""
+    }
+
     if (this.summary[i]['image'] && this.summary[i]['image']['fields']){
       return this.summary[i]['image']['fields']['file']['url'];
     }
     return "";
   }
+
+  getLangSuffixCapital(): string {
+    let v = this.translate.getLangSuffix(this.translate.translator().currentLang);
+    return v;
+  }
+
+  getName(name: string): string {
+    return this.getLangSuffixCapital() === "EN"? name :
+      name
+      + this.getLangSuffixCapital()[0].toUpperCase()
+      + this.getLangSuffixCapital()[1].toLowerCase();
+  }
+
+  getBodyName(){
+    return this.getName('body');
+  }
+
 }

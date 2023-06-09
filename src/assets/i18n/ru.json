@@ -1,6 +1,7 @@
 {
     "greeting": "Это на Русском.",
-    "personal_subtitle": "Ваш гид в Грузии",
+    "murat_personal_subtitle": "Ваш гид в Грузии",
+    "nino_personal_subtitle": "Ваш гид в Грузии",
     "itinary-request": "Вы хотите обсудить следующие шаги?",
     "home": "Главная",
     "about-me": "О Нас",
@@ -13,7 +14,7 @@
     "itinary-msg-placeholder": "Ваше сообщение.",
     "submit": "Отправить",
     "name-placeholder": "Ваше имя и фамилия",
-    "contact-us": "Свяжитесь с мной здесь",
+    "contact-us": "Свяжитесь сo мной здесь",
     "contact": "Контакты",
     "whatsapp-contact": "Или свяжитесь с мной через WhatsApp",
     "nm": "Nino & Murat Turistik"
