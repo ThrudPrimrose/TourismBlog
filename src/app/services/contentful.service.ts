@@ -9,8 +9,6 @@ export class ContentfulService {
   private cdaClient: any = null;
 
   constructor() {
-    console.log(process.env)
-
     let s1:string = process.env["NG_APP_SPACE"] ?? ""
     let s2:string = process.env['NG_APP_ACCESS_TOKEN'] ?? ""
 

@@ -28,12 +28,10 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     let autobiography = sessionStorage.getItem("autobiography");
-    //console.log(autobiography);
 
-    if (autobiography == null || autobiography == "") {
+    if (autobiography == null || autobiography === "") {
       this.contentful.getAutobiography().then(data => {
-        console.log(data);
-        if (data.length == 0) {
+        if (data.length === 0) {
           //This should never happen
           return;
         }
@@ -42,12 +40,10 @@ export class AboutComponent implements OnInit {
         sessionStorage.setItem("autobiography", data_string);
       });
     } else {
-      //console.log(JSON.parse(autobiography))
       this.set_local_variables(JSON.parse(autobiography));
     }
 
     this.translate.translator().onLangChange.subscribe((event: any) => {
-      //console.log(event.lang);
       this.autobiography = this.autobiographies[this.translate.getLangSuffix(event.lang)];
     });
   }

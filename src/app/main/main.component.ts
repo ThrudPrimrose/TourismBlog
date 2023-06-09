@@ -22,7 +22,6 @@ export class MainComponent implements OnInit {
     }
 
     this.router.events.subscribe(val => {
-      console.log(this.router.url);
       if (this.router.url === "/trips") {
         this.position_option = "fixed";
       } else {
@@ -39,7 +38,5 @@ export class MainComponent implements OnInit {
   returnToRoot() {
     this.router.navigateByUrl("");
   }
-
-
 
 }

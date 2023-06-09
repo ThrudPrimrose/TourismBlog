@@ -24,8 +24,8 @@ export class TripsComponent implements OnInit {
   constructor(private contentful: ContentfulService, private translate: TranslatorService, private aux: AuxService,
     private router: Router) { }
 
-  trips: Array<Trip> = Array();
-  visible: Array<boolean> = Array();
+  trips: Array<Trip> = [];
+  visible: Array<boolean> = [];
 
   set_local_variables(data: any) {
     var trip: Trip = {
@@ -38,7 +38,6 @@ export class TripsComponent implements OnInit {
     };
     this.trips.push(trip);
     this.visible.push(false);
-    console.log(trip.photo_url);
   }
 
   getLangSuffixCapital(): string {
@@ -48,21 +47,23 @@ export class TripsComponent implements OnInit {
 
   getLangSuffix(): string {
     let v = this.translate.getLangSuffix(this.translate.translator().currentLang);
-    if (v == "EN") {
+    if (v === "EN") {
       return "";
     }
     let v2 = v[0].toUpperCase() + v[1].toLowerCase();
     return v2;
   }
 
+  change(trip_item: any, i : number){
+    if (trip_item.price > 0) { this.visible[i] = !this.visible[i] }
+  }
+
   ngOnInit(): void {
     let stored_trips = sessionStorage.getItem("trip");
-    // console.log(trip);
 
-    if (stored_trips == null || stored_trips == "") {
+    if (stored_trips == null || stored_trips === "") {
       this.contentful.getTrip().then(data => {
-        console.log(data);
-        if (data.length == 0) {
+        if (data.length === 0) {
           //This should never happen
           return;
         }
@@ -73,16 +74,12 @@ export class TripsComponent implements OnInit {
 
         const data_string: string = JSON.stringify(data);
         sessionStorage.setItem("trip", data_string);
-
-        console.log(this.trips);
       });
     } else {
       let data = JSON.parse(stored_trips);
       for (let item of data) {
         this.set_local_variables(item["fields"]);
       }
-
-      console.log(this.trips);
     }
   }
 

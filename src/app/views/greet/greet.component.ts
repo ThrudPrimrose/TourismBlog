@@ -11,14 +11,14 @@ export class GreetComponent implements OnInit {
 
   constructor(private elementRef: ElementRef, private contentful: ContentfulService, private translate: TranslatorService) { }
 
-  images: string[] = new Array();
-  summary: any[] = new Array();
+  images: string[] = [];
+  summary: any[] = [];
 
   ngOnInit(): void {
     this.contentful.getHeaderImages().then(items => {
-      console.log(items);
       for (const item of items) {
         for (const image of item["fields"]["images"]) {
+          console.log()
           this.images.push(image["fields"]["file"]["url"]);
         }
       }
@@ -29,7 +29,6 @@ export class GreetComponent implements OnInit {
       for (const summary_item of items[0]['fields']['summaryItems']) {
         this.summary.push(summary_item['fields']);
       }
-      console.log(this.summary);
     });
 
     this.innerWidth = window.innerWidth;
@@ -42,5 +41,12 @@ export class GreetComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(_event: any) {
     this.innerWidth = window.innerWidth;
+  }
+
+  getImage(i: number){
+    if (this.summary[i]['image'] && this.summary[i]['image']['fields']){
+      return this.summary[i]['image']['fields']['file']['url'];
+    }
+    return "";
   }
 }

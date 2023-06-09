@@ -13,10 +13,10 @@
   <c-row *ngFor="let summary_item of summary; let i = index" [attr.data-index]="i">
     <c-card class="load-animation">
       <c-row>
-        <c-col [lg]="5" *ngIf="(i%2) == 0" class="rel md-3">
-          <img class="limit-height left" [src]="summary_item['image']['fields']['file']['url']">
+        <c-col [lg]="5" *ngIf="(i%2) == 0 && getImage(i) != ''" class="rel md-3">
+          <img class="limit-height left" [src]="getImage(i)">
         </c-col>
-        <c-col [lg]="7">
+        <c-col [lg]="getImage(i) != ''? 7: 12">
           <c-card-body>
             <div class="me-3 ms-3">
               <h5 cCardTitle>{{summary_item['title']}}</h5>
@@ -27,8 +27,8 @@
             </div>
           </c-card-body>
         </c-col>
-        <c-col [lg]="5" *ngIf="(i%2) == 1" class="rel">
-          <img class="limit-height right" [src]="summary_item['image']['fields']['file']['url']">
+        <c-col [lg]="5" *ngIf="(i%2) == 1  && getImage(i) != ''" class="rel">
+          <img class="limit-height right" [src]="getImage(i)">
         </c-col>
       </c-row>
     </c-card>
