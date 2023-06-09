@@ -18,7 +18,7 @@
                     </c-col>
                     <c-col xs="4">
                         <img *ngIf="trip_item.photo_url != 'NONE'" class="card-img-sm-right fixed-height"
-                            src="{{ trip_item.photo_url }}" />
+                            src="{{ trip_item.photo_url }}" alt="Trip summary image, the title image for the trip" />
                     </c-col>
                 </c-row>
             </c-card-body>
@@ -29,7 +29,8 @@
                         <c-row>
                             <c-col xs="4">
                                 <img class="card-img-sm-right fixed-height"
-                                    src='{{ day_item.fields["dayImage"]["fields"]["file"]["url"] }}' />
+                                    src='{{ day_item.fields["dayImage"]["fields"]["file"]["url"] }}'
+                                    alt="An image as the summary of a day in the trip"/>
                             </c-col>
                             <c-col xs="8">
                                 <h5 cCardTitle> {{ day_item.fields["dayTitle" + getLangSuffix()] }} </h5>

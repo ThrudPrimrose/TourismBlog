@@ -1,8 +1,8 @@
 <div class="content">
-    <c-header>
+    <c-header role="header">
         <c-header-brand class="toright" routerLink="/home"> {{ "nm" | translate }}</c-header-brand>
     </c-header>
-    <c-header>
+    <c-header role="header">
         <c-header-nav>
             <a>
                 <c-nav-item>
@@ -54,7 +54,7 @@
     </c-footer>
 </div>
 <div *ngIf="position_option == 'fixed'">
-    <c-footer position="fixed" class="white-background">
+    <c-footer position="fixed" class="white-background" role="footer">
       <div class="ml-auto">
         <span><small>All rights reserved. © 2023</small></span> |
         <span><small><a href="https://github.com/ThrudPrimrose" style="color:#201e1eb7;">Built by Yakup Budanaz</a></small></span> |

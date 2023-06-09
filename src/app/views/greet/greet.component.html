@@ -2,7 +2,7 @@
   <c-carousel-indicators></c-carousel-indicators>
   <c-carousel-inner>
     <c-carousel-item *ngFor="let slide of images">
-      <img [src]="slide" class="header-image" [style.height.px]="innerWidth > 600? '470': '235'" />
+      <img [src]="slide" class="header-image" alt="Carousel image from Georgia" [style.height.px]="innerWidth > 600? '470': '235'" />
     </c-carousel-item>
   </c-carousel-inner>
   <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
@@ -14,7 +14,7 @@
     <c-card class="load-animation">
       <c-row>
         <c-col [xl]=4 *ngIf="(i%2) == 1 && getImage(i) != ''" class="imageClass">
-          <img class="limit-height left" [src]="getImage(i)">
+          <img class="limit-height left" alt="Summary item image from Georgia" [src]="getImage(i)">
         </c-col>
         <c-col [xl]=8 class="textClass">
           <c-card-body *ngIf="(i%2) == 1">
@@ -31,7 +31,7 @@
           </c-card-body>
         </c-col>
         <c-col [xl]=4 *ngIf="(i%2) == 0  && getImage(i) != ''" class="imageClass">
-          <img class="limit-height right" [src]="getImage(i)">
+          <img class="limit-height right" alt="Summary item image from Georgia" [src]="getImage(i)">
         </c-col>
       </c-row>
     </c-card>
