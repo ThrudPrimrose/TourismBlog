@@ -24,6 +24,7 @@ import { CarouselModule } from '@coreui/angular';
 import { CardModule } from '@coreui/angular';
 import { ContactComponent } from './views/contact/contact.component';
 import { DisclaimerComponent } from './views/disclaimer/disclaimer.component';
+import { Meta } from '@angular/platform-browser';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
