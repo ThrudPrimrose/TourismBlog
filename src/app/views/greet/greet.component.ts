@@ -28,7 +28,6 @@ export class GreetComponent implements OnInit {
       for (const summary_item of items[0]['fields']['summaryItems']) {
         this.summary.push(summary_item['fields']);
       }
-      console.log(items);
     });
 
     this.innerWidth = window.innerWidth;

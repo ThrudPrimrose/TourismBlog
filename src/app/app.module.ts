@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { GreetComponent } from './views/greet/greet.component';
 import { AboutComponent } from './views/about/about.component';
-import { NewsComponent } from './views/news/news.component';
 import { TripsComponent } from './views/trips/trips.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -24,7 +23,6 @@ import { CarouselModule } from '@coreui/angular';
 import { CardModule } from '@coreui/angular';
 import { ContactComponent } from './views/contact/contact.component';
 import { DisclaimerComponent } from './views/disclaimer/disclaimer.component';
-import { Meta } from '@angular/platform-browser';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +34,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MainComponent,
     GreetComponent,
     AboutComponent,
-    NewsComponent,
     TripsComponent,
     ContactComponent,
     DisclaimerComponent
