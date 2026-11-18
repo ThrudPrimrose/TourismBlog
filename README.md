@@ -1,15 +1,6 @@
 # TourismBlog
 
-Tour site for Nino & Murat Tours, built with Angular 22, CoreUI 5, and ngx-translate (EN, RU, TR). Content is loaded from
-Contentful.
-
-Requires Node.js 22.22.3, 24.15, or 26 and newer. Set the Contentful credentials as environment variables (or in a `.env` file)
-before building or serving:
-
-```
-NG_APP_SPACE=<space id>
-NG_APP_ACCESS_TOKEN=<content delivery API token>
-```
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
 
 ## Development server
 
@@ -25,7 +16,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests with [Vitest](https://vitest.dev).
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 

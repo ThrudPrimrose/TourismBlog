@@ -1,6 +1,7 @@
 import { provideZoneChangeDetection } from '@angular/core';
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -12,6 +13,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideZoneChangeDetection(),
     provideRouter(routes),
+    provideAnimations(),
     provideHttpClient(withXhr(), withInterceptorsFromDi()),
     provideTranslateService({
       loader: provideTranslateHttpLoader({ prefix: './assets/i18n/', suffix: '.json' }),
