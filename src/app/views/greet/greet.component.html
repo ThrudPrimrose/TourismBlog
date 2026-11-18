@@ -1,39 +1,53 @@
-<c-carousel *ngIf="images.length > 0">
-  <c-carousel-indicators></c-carousel-indicators>
-  <c-carousel-inner>
-    <c-carousel-item *ngFor="let slide of images">
-      <img [src]="slide" class="header-image" alt="Carousel image from Georgia" [style.height.px]="innerWidth > 600? '560': '280'" />
-    </c-carousel-item>
-  </c-carousel-inner>
-  <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
-  <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
-</c-carousel>
+@if (images.length > 0) {
+  <c-carousel>
+    <c-carousel-indicators></c-carousel-indicators>
+    <c-carousel-inner>
+      @for (slide of images; track slide) {
+        <c-carousel-item>
+          <img [src]="slide" class="header-image" alt="Carousel image from Georgia" [style.height.px]="innerWidth > 600? '560': '280'" />
+        </c-carousel-item>
+      }
+    </c-carousel-inner>
+    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+  </c-carousel>
+}
 
 <div>
-  <c-row *ngFor="let summary_item of summary; let i = index" [attr.data-index]="i">
-    <c-card class="load-animation">
-      <c-row>
-        <c-col [xl]=4 *ngIf="(i%2) == 1 && getImage(i) != ''" class="imageClass">
-          <img class="limit-height left" alt="Summary item image from Georgia" [src]="getImage(i)">
-        </c-col>
-        <c-col [xl]=8 class="textClass">
-          <c-card-body *ngIf="(i%2) == 1">
-            <div class="me-3 ms-3 ">
-              <h1 cCardTitle>{{summary_item[getName('title')]}}</h1> <br>
-              <div [innerHTML]="summary_item[getBodyName()]"></div>
-            </div>
-          </c-card-body>
-          <c-card-body *ngIf="(i%2) == 0">
-            <div class="me-3 ms-3">
-              <h1 cCardTitle>{{summary_item[getName('title')]}}</h1> <br>
-              <div [innerHTML]="summary_item[getBodyName()]"></div>
-            </div>
-          </c-card-body>
-        </c-col>
-        <c-col [xl]=4 *ngIf="(i%2) == 0  && getImage(i) != ''" class="imageClass">
-          <img class="limit-height right" alt="Summary item image from Georgia" [src]="getImage(i)">
-        </c-col>
-      </c-row>
-    </c-card>
-  </c-row>
+  @for (summary_item of summary; track summary_item; let i = $index) {
+    <c-row [attr.data-index]="i">
+      <c-card class="load-animation">
+        <c-row>
+          @if ((i%2) == 1 && getImage(i) != '') {
+            <c-col [xl]=4 class="imageClass">
+              <img class="limit-height left" alt="Summary item image from Georgia" [src]="getImage(i)">
+            </c-col>
+          }
+          <c-col [xl]=8 class="textClass">
+            @if ((i%2) == 1) {
+              <c-card-body>
+                <div class="me-3 ms-3 ">
+                  <h1 cCardTitle>{{summary_item[getName('title')]}}</h1> <br>
+                  <div [innerHTML]="summary_item[getBodyName()]"></div>
+                </div>
+              </c-card-body>
+            }
+            @if ((i%2) == 0) {
+              <c-card-body>
+                <div class="me-3 ms-3">
+                  <h1 cCardTitle>{{summary_item[getName('title')]}}</h1> <br>
+                  <div [innerHTML]="summary_item[getBodyName()]"></div>
+                </div>
+              </c-card-body>
+            }
+          </c-col>
+          @if ((i%2) == 0  && getImage(i) != '') {
+            <c-col [xl]=4 class="imageClass">
+              <img class="limit-height right" alt="Summary item image from Georgia" [src]="getImage(i)">
+            </c-col>
+          }
+        </c-row>
+      </c-card>
+    </c-row>
+  }
 </div>

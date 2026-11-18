@@ -1,18 +1,19 @@
-<c-row *ngIf="murat_name != null && murat_name != ''" class="justify-content-center load-animation">
-  <c-col xs="11" md="9" lg="7" xl="6">
-    <c-card class="center-card">
-      <c-card-body>
-        <h5 cCardTitle>
-          {{murat_name}} {{murat_surname}}
-        </h5>
-        <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
-          {{ "murat_personal_subtitle" | translate }}
-        </h6>
-        <div class="row">
-          <div class="col-xs-12 col-s-12 col-md-9 col-lg-6 col-xl-6">
-            <img class="left" src="{{murat_photo_url}}" alt="Photo of Murat"/>
-          </div>
-          <div class="col-xs-0 col-s-0 col-md-3 col-lg-6 col-xl-6">
+@if (murat_name != null && murat_name != '') {
+  <c-row class="justify-content-center load-animation">
+    <c-col xs="11" md="9" lg="7" xl="6">
+      <c-card class="center-card">
+        <c-card-body>
+          <h5 cCardTitle>
+            {{murat_name}} {{murat_surname}}
+          </h5>
+          <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+            {{ "murat_personal_subtitle" | translate }}
+          </h6>
+          <div class="row">
+            <div class="col-xs-12 col-s-12 col-md-9 col-lg-6 col-xl-6">
+              <img class="left" src="{{murat_photo_url}}" alt="Photo of Murat"/>
+            </div>
+            <div class="col-xs-0 col-s-0 col-md-3 col-lg-6 col-xl-6">
               <c-row>
                 <p cCardText>
                   {{murat_autobiography}}
@@ -29,36 +30,39 @@
                   <a href="https://wa.me/995593792799"><img height="32px" src="assets/whatsapp.svg" alt="Whatsapp logo" aria-label="Link to Murat's WhatsApp Chat"></a>
                 </c-col>
               </c-row>
+            </div>
           </div>
-        </div>
-      </c-card-body>
-    </c-card>
-  </c-col>
-</c-row>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+}
 
-<c-row *ngIf="nino_name != null && nino_name != ''" class="justify-content-center load-animation">
-  <c-col xs="11" md="9" lg="7" xl="6">
-    <c-card class="center-card">
-      <c-card-body>
-        <h5 cCardTitle>
-          {{nino_name}} {{nino_surname}}
-        </h5>
-        <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
-          {{ "nino_personal_subtitle" | translate }}
-        </h6>
-        <div class="row">
-          <div class="col-xs-12 col-s-12 col-md-9 col-lg-6 col-xl-6">
-            <img class="left" src="{{nino_photo_url}}" alt="Photo of Nino"/>
-          </div>
-          <div class="col-xs-0 col-s-0 col-md-3 col-lg-6 col-xl-6">
+@if (nino_name != null && nino_name != '') {
+  <c-row class="justify-content-center load-animation">
+    <c-col xs="11" md="9" lg="7" xl="6">
+      <c-card class="center-card">
+        <c-card-body>
+          <h5 cCardTitle>
+            {{nino_name}} {{nino_surname}}
+          </h5>
+          <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+            {{ "nino_personal_subtitle" | translate }}
+          </h6>
+          <div class="row">
+            <div class="col-xs-12 col-s-12 col-md-9 col-lg-6 col-xl-6">
+              <img class="left" src="{{nino_photo_url}}" alt="Photo of Nino"/>
+            </div>
+            <div class="col-xs-0 col-s-0 col-md-3 col-lg-6 col-xl-6">
               <c-row>
                 <p cCardText>
                   {{nino_autobiography}}
                 </p>
               </c-row>
+            </div>
           </div>
-        </div>
-      </c-card-body>
-    </c-card>
-  </c-col>
-</c-row>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+}

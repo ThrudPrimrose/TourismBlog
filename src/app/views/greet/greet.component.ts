@@ -1,10 +1,14 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
-import { ContentfulService } from 'src/app/services/contentful.service';
-import { TranslatorService } from 'src/app/services/translator.service';
+import { Component, ElementRef, HostListener, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ContentfulService } from '../../services/contentful.service';
+import { TranslatorService } from '../../services/translator.service';
+import { ThemeDirective, CarouselComponent, CarouselIndicatorsComponent, CarouselInnerComponent, CarouselItemComponent, CarouselControlComponent, RowComponent, TextColorDirective, TextBgColorDirective, CardComponent, ColComponent, CardBodyComponent, CardTitleDirective } from '@coreui/angular';
+import { RouterLink } from '@angular/router';
 @Component({
-  selector: 'app-greet',
-  templateUrl: './greet.component.html',
-  styleUrls: ['./greet.component.scss']
+    selector: 'app-greet',
+    templateUrl: './greet.component.html',
+    styleUrls: ['./greet.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    imports: [ThemeDirective, CarouselComponent, CarouselIndicatorsComponent, CarouselInnerComponent, CarouselItemComponent, CarouselControlComponent, RouterLink, RowComponent, TextColorDirective, TextBgColorDirective, CardComponent, ColComponent, CardBodyComponent, CardTitleDirective]
 })
 export class GreetComponent implements OnInit {
 
@@ -55,7 +59,7 @@ export class GreetComponent implements OnInit {
   }
 
   getLangSuffixCapital(): string {
-    let v = this.translate.getLangSuffix(this.translate.translator().currentLang);
+    let v = this.translate.getLangSuffix(this.translate.translator().getCurrentLang());
     return v;
   }
 

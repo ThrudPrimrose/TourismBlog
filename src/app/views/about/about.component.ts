@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { AuxService } from 'src/app/services/aux.service';
-import { ContentfulService } from 'src/app/services/contentful.service';
-import { TranslatorService } from 'src/app/services/translator.service';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AuxService } from '../../services/aux.service';
+import { ContentfulService } from '../../services/contentful.service';
+import { TranslatorService } from '../../services/translator.service';
+import { RowComponent, ColComponent, TextColorDirective, TextBgColorDirective, CardComponent, CardBodyComponent, CardTitleDirective, CardSubtitleDirective, CardTextDirective } from '@coreui/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+    selector: 'app-about',
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    imports: [RowComponent, ColComponent, TextColorDirective, TextBgColorDirective, CardComponent, CardBodyComponent, CardTitleDirective, CardSubtitleDirective, CardTextDirective, TranslatePipe]
 })
 export class AboutComponent implements OnInit {
 

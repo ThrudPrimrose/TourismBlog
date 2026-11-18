@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Positions } from '@coreui/angular';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { TranslatorService } from '../services/translator.service';
+import { HeaderComponent, HeaderBrandComponent, HeaderNavComponent, NavItemComponent, NavLinkDirective, ThemeDirective, DropdownComponent, ButtonDirective, DropdownToggleDirective, DropdownMenuDirective, DropdownItemDirective, FooterComponent } from '@coreui/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+    selector: 'app-main',
+    templateUrl: './main.component.html',
+    styleUrls: ['./main.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    imports: [HeaderComponent, HeaderBrandComponent, RouterLink, HeaderNavComponent, NavItemComponent, NavLinkDirective, ThemeDirective, DropdownComponent, ButtonDirective, DropdownToggleDirective, DropdownMenuDirective, DropdownItemDirective, RouterOutlet, FooterComponent, TranslatePipe]
 })
 export class MainComponent implements OnInit {
   currentLanguage: string = "EN";

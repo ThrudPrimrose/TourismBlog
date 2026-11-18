@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class TranslatorService {
 
   constructor(public translate: TranslateService) {
-    translate.setDefaultLang('en');
+    translate.setFallbackLang('en');
     translate.addLangs(['en', 'ru', 'tr']);
     translate.use('en');
   }
@@ -20,8 +20,10 @@ export class TranslatorService {
     return this.translate;
   }
 
-  getLangSuffix(lang: string): string {
-    if (lang.toUpperCase() === "RU") {
+  getLangSuffix(lang: string | null): string {
+    if (lang === null) {
+      return "EN";
+    } else if (lang.toUpperCase() === "RU") {
       return "RU";
     } else if (lang.toUpperCase() === "TR") {
       return "TR";

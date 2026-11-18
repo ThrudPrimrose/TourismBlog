@@ -1,3 +1,5 @@
+import { provideRouter } from '@angular/router';
+import { provideTranslateService } from '@ngx-translate/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GreetComponent } from './greet.component';
@@ -8,8 +10,9 @@ describe('GreetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GreetComponent ]
-    })
+    imports: [GreetComponent],
+    providers: [provideRouter([]), provideTranslateService()]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(GreetComponent);

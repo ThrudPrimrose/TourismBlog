@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuxService } from 'src/app/services/aux.service';
-import { ContentfulService } from 'src/app/services/contentful.service';
-import { TranslatorService } from 'src/app/services/translator.service';
+import { AuxService } from '../../services/aux.service';
+import { ContentfulService } from '../../services/contentful.service';
+import { TranslatorService } from '../../services/translator.service';
+import { ContainerComponent, RowComponent, TextColorDirective, TextBgColorDirective, CardComponent, CardBodyComponent, ColComponent, CardTitleDirective, CardSubtitleDirective, CardTextDirective, CollapseDirective, ButtonDirective } from '@coreui/angular';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 interface Trip {
@@ -15,9 +17,11 @@ interface Trip {
 }
 
 @Component({
-  selector: 'app-trips',
-  templateUrl: './trips.component.html',
-  styleUrls: ['./trips.component.scss']
+    selector: 'app-trips',
+    templateUrl: './trips.component.html',
+    styleUrls: ['./trips.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    imports: [ContainerComponent, RowComponent, TextColorDirective, TextBgColorDirective, CardComponent, CardBodyComponent, ColComponent, CardTitleDirective, CardSubtitleDirective, CardTextDirective, CollapseDirective, ButtonDirective, TranslatePipe]
 })
 export class TripsComponent implements OnInit {
 
@@ -41,12 +45,12 @@ export class TripsComponent implements OnInit {
   }
 
   getLangSuffixCapital(): string {
-    let v = this.translate.getLangSuffix(this.translate.translator().currentLang);
+    let v = this.translate.getLangSuffix(this.translate.translator().getCurrentLang());
     return v;
   }
 
   getLangSuffix(): string {
-    let v = this.translate.getLangSuffix(this.translate.translator().currentLang);
+    let v = this.translate.getLangSuffix(this.translate.translator().getCurrentLang());
     if (v === "EN") {
       return "";
     }

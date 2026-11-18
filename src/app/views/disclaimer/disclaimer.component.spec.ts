@@ -8,8 +8,8 @@ describe('DisclaimerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DisclaimerComponent ]
-    })
+    imports: [DisclaimerComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(DisclaimerComponent);

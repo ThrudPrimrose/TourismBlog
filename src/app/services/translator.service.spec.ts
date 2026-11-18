@@ -1,3 +1,4 @@
+import { provideTranslateService } from '@ngx-translate/core';
 import { TestBed } from '@angular/core/testing';
 
 import { TranslatorService } from './translator.service';
@@ -6,7 +7,7 @@ describe('TranslatorService', () => {
   let service: TranslatorService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({ providers: [provideTranslateService()] });
     service = TestBed.inject(TranslatorService);
   });
 
